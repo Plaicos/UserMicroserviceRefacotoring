@@ -1,3 +1,4 @@
 module.exports = {
-    request: require("./Request/requestModels")
+    User: require("./User/UserModel"),
+    Company: require("./Company/CompanyModel")
 }
