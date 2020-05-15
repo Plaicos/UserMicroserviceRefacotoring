@@ -1,8 +1,8 @@
 syntax = "proto3";
-package ApiGatewayPackage;
+package UserPackage;
 
-service ApiGateway {
-    rpc Test(file) returns (file);
+service User {
+    
 } 
 
 message buffer {

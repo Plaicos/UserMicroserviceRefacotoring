@@ -8,6 +8,6 @@ module.exports = class ServiceConfiguration {
     oneofs = true
     // app
     ProtoPath = App.RootPath + "/gRPC/Server/PROTO/service.proto";
-    PackageName = "ApiGatewayPackage";
-    ServiceName = "ApiGateway";
+    PackageName = "UserPackage";
+    ServiceName = "User";
 }
