@@ -9,7 +9,7 @@ module.exports = class Application {
     static Dependencies;
     static UseCases;
     static Adapters;
-    static Entities= require("./App/Entities/Entities");
+    static Entities = require("./App/Entities/Entities");
 
     static async InitializeAsync() {
         try {
@@ -17,6 +17,7 @@ module.exports = class Application {
             this.Entities = require("./App/Entities/Entities");
             this.Adapters = require("./App/Adapters/adapters");
             this.UseCases = require("./App/UseCases/UseCases");
+            this.ConfigureDatabaseAdapter();
         }
         catch (erro) {
             throw erro;
@@ -38,4 +39,13 @@ module.exports = class Application {
         }
     }
 
+    static ConfigureDatabaseAdapter() {
+        try {
+            Application.Dependencies.DAO.SetDatabase(Application.Dependencies.Database);
+            return;
+        }
+        catch (erro) {
+            throw erro;
+        }
+    }
 }
