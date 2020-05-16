@@ -1,3 +1,3 @@
 module.exports = {
-    Express: require("./Express/expressAdapters")
+    GrpcRequest: require("./GrpcRequest")
 }

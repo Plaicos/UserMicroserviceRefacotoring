@@ -1,5 +1,5 @@
 module.exports = {
-    User: require("./User/UserEntity"),
+    User: require("./User/userEntities"),
     Company: require("./Company/CompanyEntity"),
     BillingData: require("./BillingData/BillingData"),
     Warehouse: require("./Warehouse/WarehouseEntity"),

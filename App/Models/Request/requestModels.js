@@ -1,3 +1,4 @@
 module.exports = {
-    NewUser: require("./NewUser")
+    NewUser: require("./NewUser"),
+    NewSupplier: require("./NewSupplier")
 }

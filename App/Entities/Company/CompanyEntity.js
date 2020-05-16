@@ -12,6 +12,16 @@ module.exports = class CompanyEntity {
         }
     }
 
+    static async ValidateNewCompany(company){
+        try {
+            await this.ValidateDataFields(company);
+            await this.CheckIfCompanyAlreadyExists(company.Cnpj);
+        }
+        catch (erro) {
+            throw erro;
+        }
+    }
+
     static GetApp() {
         return require("../../../Application");
     }
@@ -22,6 +32,15 @@ module.exports = class CompanyEntity {
         }
         catch (erro) {
             throw erro;
+        }
+    }
+
+    static async CheckIfCompanyAlreadyExists(cnpj){
+        try {
+            
+        } 
+        catch (erro) {
+            throw erro;    
         }
     }
 }

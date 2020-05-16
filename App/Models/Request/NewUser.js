@@ -1,3 +1,8 @@
-module.exports = class NewUserRequestModel {
-    
+module.exports = class NewUserRequest {
+    Username;
+    Password;
+    Email;
+    RecoveryEmail;
+    CompanyData;
+    BillingData;
 }

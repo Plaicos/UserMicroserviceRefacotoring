@@ -16,6 +16,18 @@ module.exports = class UserEntity {
         }
     }
 
+    //user cant already exist
+    static async ValidateNewUser(user) {
+        try {
+            await this.ValidateDataFields(user);
+            await this.CheckIfUserAlreadyExist(user.Username);
+            await this.ValidateBillingData(user.BillingData);
+        }
+        catch (erro) {
+            throw erro;
+        }
+    }
+
     static GetApp() {
         return require("../../../Application");
     }
@@ -41,6 +53,10 @@ module.exports = class UserEntity {
         catch (erro) {
             throw erro;
         }
+    }
+
+    static async CheckIfUserAlreadyExist(user){
+
     }
 
 }
