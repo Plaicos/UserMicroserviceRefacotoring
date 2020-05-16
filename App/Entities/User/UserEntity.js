@@ -3,12 +3,13 @@ module.exports = class UserEntity {
     static Username = require("./DataFields/Username/Username");
     static Password = require("./DataFields/Password/Password");
     static Email = require("./DataFields/Email/Email");
+    static Type = require("./DataFields/Type/Type");
 
     //instance of UserModel as input
     static async ValidateUser(user) {
         try {
             await this.ValidateDataFields(user);
-            await this.ValidateCompany(user.Company);
+            await this.ValidateBillingData(user.BillingData);
         }
         catch (erro) {
             throw erro;
@@ -24,6 +25,7 @@ module.exports = class UserEntity {
             await this.Username.Validate(user.Username);
             await this.Password.Validate(user.Password);
             await this.Email.Validate(user.Email);
+            await this.Email.Validate(user.RecoveryEmail);
             return;
         }
         catch (erro) {
@@ -31,13 +33,14 @@ module.exports = class UserEntity {
         }
     }
 
-    static async ValidateCompany(company){
+    static async ValidateBillingData(billingData){
         try {
             let App = this.GetApp();
-            return await App.Entities.Company.ValidateCompany(company);
+            return await App.Entities.BillingData.ValidateBillingData(billingData);
         }
         catch (erro) {
             throw erro;
         }
     }
+
 }

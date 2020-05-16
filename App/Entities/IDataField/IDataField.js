@@ -6,6 +6,6 @@ module.exports = class DataField {
     }
 
     static GetApp(){
-        return require("../../../../Application");
+        return require("../../../Application");
     }
 }

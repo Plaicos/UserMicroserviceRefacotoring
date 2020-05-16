@@ -1,4 +1,4 @@
-var DataField = require("../DataField");
+var DataField = require("../../../IDataField/IDataField");
 
 module.exports = class Username extends DataField {
 

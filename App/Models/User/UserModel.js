@@ -4,7 +4,5 @@ module.exports = class UserModel {
     Type;
     Email;
     RecoveryEmail;
-    Company;
-    Plan;
-    Warehouses;
+    BillingData;
 }
