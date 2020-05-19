@@ -2,13 +2,14 @@ syntax = "proto3";
 package UserPackage;
 
 service User {
-    rpc CreateUser(createUserRequest) returns (statusResponse);
+    rpc CreateSupplier(createSupplierRequest) returns (statusResponse);
 } 
 
-message createUserRequest {
+message createSupplierRequest {
     string user = 1;
     string password = 2;
     string email = 3;
+    string recoveryEmail = 4;
 }
 
 message statusResponse {

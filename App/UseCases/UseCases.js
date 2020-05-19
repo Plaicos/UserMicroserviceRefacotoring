@@ -1,7 +1,7 @@
 module.exports = {
     //User
     CreateNewSupplier: require("./CreateNewSupplier"),
-    ValidateNewUser: require("./ValidateNewUser"),
+    ValidateNewSupplier: require("./ValidateNewSupplier"),
     //Company 
     CreateNewCompany: require("./CreateNewCompany"),
     ValidateNewCompany: require("./ValidateNewCompany"),

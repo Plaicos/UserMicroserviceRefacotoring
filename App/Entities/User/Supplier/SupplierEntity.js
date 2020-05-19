@@ -5,9 +5,9 @@ module.exports = class SupplierEntity extends UserEntity {
     static MinimumSaleValue = require("./DataFields/MinimumSaleValue/MinimumSaleValue");
 
     //instance of SupplierModel as input
-    static async ValidateSupplier(supplier) {
+    static async ValidateNewSupplier(supplier) {
         try {
-            await this.ValidateUser(supplier);
+            await this.ValidateNewUser(supplier);
             await this.ValidateExclusiveDataFields(supplier);
             return;
         }

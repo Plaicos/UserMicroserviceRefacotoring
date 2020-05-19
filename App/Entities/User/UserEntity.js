@@ -45,7 +45,7 @@ module.exports = class UserEntity {
         }
     }
 
-    static async ValidateBillingData(billingData){
+    static async ValidateBillingData(billingData) {
         try {
             let App = this.GetApp();
             return await App.Entities.BillingData.ValidateBillingData(billingData);
@@ -55,8 +55,20 @@ module.exports = class UserEntity {
         }
     }
 
-    static async CheckIfUserAlreadyExist(user){
-
+    static async CheckIfUserAlreadyExist(user) {
+        try {
+            let App = this.GetApp();
+            let userExist = await App.Dependencies.DAO.CheckIfUserExist(user);
+            if (userExist) {
+                new App.Errors.Validation("username", "Esse nome de usuario já está em uso", Error().stack);
+            }
+            else {
+                return;
+            }
+        }
+        catch (erro) {
+            throw erro;
+        }
     }
 
 }

@@ -3,7 +3,7 @@ var SupplierFactory = require("../Factories/User/SupplierFactory");
 
 module.exports = async (request) => {
     try {
-        let supplier = SupplierFactory.Build();
+        let supplier = SupplierFactory.Build(request);
         return supplier;
     }
     catch (erro) {
