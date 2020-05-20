@@ -4,7 +4,7 @@ module.exports = class BillingDataEntity {
     //instance of CompanyModel as input
     static async ValidateBillingData(billingData) {
         try {
-            await this.ValidateDataFields(user);
+            await this.ValidateDataFields(billingData);
             
         }
         catch (erro) {

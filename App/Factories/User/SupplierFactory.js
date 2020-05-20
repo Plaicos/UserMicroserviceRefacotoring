@@ -8,6 +8,7 @@ module.exports = class SupplierFactory {
             supplier.Password = request.Password;
             supplier.Email = request.Email;
             supplier.RecoveryEmail = request.RecoveryEmail;
+            supplier.MinimumSaleValue = request.MinimumSaleValue;
             supplier.BillingData = request.BillingData;
             return supplier;
         }

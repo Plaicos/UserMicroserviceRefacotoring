@@ -6,6 +6,7 @@ module.exports = class Controller {
         try {
             let request = App.Adapters.GrpcRequest.ToNewSupplier(call);
             await UseCaseOperator.CreateNewSupplier(request);
+            callback(null, { status: "ok" })
         }
         catch (erro) {
             this.HandleError(callback, erro);

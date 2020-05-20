@@ -10,6 +10,11 @@ message createSupplierRequest {
     string password = 2;
     string email = 3;
     string recoveryEmail = 4;
+    string cnpj = 5;
+    float minimumSaleValue = 6;
+    float cofins = 7;
+    float icms = 8;
+    float pis = 9;
 }
 
 message statusResponse {
